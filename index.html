@@ -42,7 +42,7 @@
 			el.innerHTML = el.innerHTML + words[word_counter][character_counter++];
 
 			// if current char count == the length of the word
-			// FIXED THE BUG HERE
+			// FIXED THE BUG WHERE IT WAS STOPPING ON THE LAST LETTER OF A WORD
 			if(character_counter == words[word_counter].length + 1)
 			{
 				word_counter++; 	//choose a different word
