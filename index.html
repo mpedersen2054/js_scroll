@@ -30,12 +30,9 @@
 			word_counter = 0,
 			character_counter = 0;
 
-		// There is a bug where the last character in the word doesn't show up! Please fix this error.
-
-		// There is a bug where the spaces in the words do not appear correctly. For example, for the word "being helpful". After showing "being", the space should make the right border/cursor move a little bit to the right (to account for the space being entered by the user) yet it doesn't work correctly. Please fix this error. (Hint: It may be easier to see if you slow the interval down)
-
+		// FIXED BUG WHERE THE SPACES WERE NOT BEHAVING AS INTENDED
 		for (var i = 0; i < words.length; i++) {
-			words[i] + ' '
+			words[i] = words[i].replace(/ /g, '\xa0')
 		}
 
 		function updateText()
@@ -43,6 +40,7 @@
 			el.innerHTML = el.innerHTML + words[word_counter][character_counter++];
 
 			// if current char count == the length of the word
+			// FIXED THE BUG HERE
 			if(character_counter == words[word_counter].length + 1)
 			{
 				word_counter++; 	//choose a different word
